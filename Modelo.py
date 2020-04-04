@@ -4,8 +4,8 @@ class Programa:
         self._ano = ano
         self._likes = 0
 
-    def imprime(self):
-        print(f'Nome: {self.nome}  Likes: {self.likes}')
+    def __str__(self):
+        return f'Nome: {self.nome} Likes: {self.likes}'
 
     @property
     def nome(self):
@@ -32,8 +32,8 @@ class Filme(Programa):
         super().__init__(nome, ano)
         self.duracao = duracao
 
-    def imprime(self):
-        print(f'Nome: {self.nome} - {self.duracao} min - Likes: {self.likes}')
+    def __str__(self):
+        return f'Nome: {self.nome} - {self.duracao} min - Likes: {self.likes}'
 
 
 class Serie(Programa):
@@ -41,8 +41,8 @@ class Serie(Programa):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
-    def imprime(self):
-        print(f'Nome: {self.nome} - {self.temporadas} temporadas - Likes: {self.likes}')
+    def __str__(self):
+        return f'Nome: {self.nome} - {self.temporadas} temporadas - Likes: {self.likes}'
 
 
 vingadores = Filme("Vingadores - End game", 2019, 90)
@@ -53,7 +53,8 @@ vingadores.dar_likes()
 vingadores.dar_likes()
 friends.dar_likes()
 friends.dar_likes()
+friends.dar_likes()
 
 playlist = [vingadores, friends]
 for i in playlist:
-    i.imprime()
+    print(i)
