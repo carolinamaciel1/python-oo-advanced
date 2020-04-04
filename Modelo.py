@@ -42,6 +42,8 @@ friends = Serie("Friends", 1995, 5)
 vingadores.dar_likes()
 vingadores.dar_likes()
 vingadores.dar_likes()
+friends.dar_likes()
 
-print(f'Nome: {vingadores.nome} - Ano: {vingadores.ano}')
-print(f'Nome: {friends.nome} - Ano: {friends.ano}')
+playlist = [vingadores, friends]
+for i in playlist:
+    print(f'Nome: {i.nome} - Likes: {i.likes}')
